@@ -31,9 +31,6 @@ function show(){
     nowd.innerText = existingc[j].nowdate;
     var www = document.createElement("p");
     www.innerText = existingc[j].weather;
-    var img = document.createElement("img");
-    var imgfile = "../img/" + existingc[j].filePath;
-    img.setAttribute("src", imgfile);
 
     var dbody = document.createElement("div");
     dbody.setAttribute("class", "card-body");
@@ -49,7 +46,6 @@ function show(){
     dbody.appendChild(content);
     dbody.appendChild(location);
     dbody.appendChild(ti);
-    ddd.appendChild(img);
     ddd.appendChild(dbody);
     ss.appendChild(ddd);
   };

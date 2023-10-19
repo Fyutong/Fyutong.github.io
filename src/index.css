@@ -78,10 +78,6 @@ a{
   width: 60%;
 }
 
-.card img{
-  border-radius: 5px;
-}
-
 .card p{
   width: 100%;
   text-align: left;
@@ -124,10 +120,6 @@ a{
 }
 #show + div::after{
   margin-left: 10px;
-}
-
-img+div{
-  text-align: right;
 }
 @media screen and (min-width:1024px){
   .shell span{

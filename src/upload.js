@@ -5,25 +5,7 @@ var Nlocation = "United States, Massachusetts, Boston"//record current and defau
 
 function bind(){
 	
-    document.getElementById("imgSelf").addEventListener("click",function(){
-        document.getElementById("imgUpload").click();
-    });
 }
-
-document.getElementById("imgUpload").addEventListener("change",function() {
-	var obj = document.getElementById("imgUpload");
-	var oFReader = new FileReader();
-	oFReader.readAsDataURL(obj.files[0]);
-	oFReader.onload = function(oFREvent) {
-		var style=document.createElement('style');
-		var change=document.createTextNode('#img_div:before{content:none;} #img_div:after{content:none;}')
-		style.appendChild(change);
-		document.body.appendChild(style);
-		
-		var base64 = oFREvent.target.result;
-		document.getElementById("imgSelf").setAttribute("src", base64);
-	}
-})
 
 function exist()
 {
@@ -36,40 +18,17 @@ function exist()
 
 async function handleSubmit() {
 	try{
-		var fileInput = document.getElementById('imgUpload');
-		var file = fileInput.files[0];
-		let fileName = saveImageLocally(file);
 		const inputDiv = document.getElementById('inputc');
 		const content = inputDiv.textContent.trim();
 		await showweather()
 		const www = "Weather: "+WeatherText
 		const nowdate = getdate()
 	//const location = getlocation()
-	saveData(fileName,content,www,nowdate)
+	saveData(content,www,nowdate)
 	}
 	catch{
 		console.log("submit error")
 	}
-}
-
-function saveImageLocally(file) {
-	var formData = new FormData();
-	var timestamp = Date.now();
-	var fileName = 'image_' + timestamp + '.jpg';
-
-	formData.append('image', file, fileName);
-
-	var xhr = new XMLHttpRequest();
-	xhr.open('POST', '../src/upload.php', true);
-	xhr.onload = function() {
-		if (xhr.status === 200) {
-		alert('Image uploaded successfully!');
-		} else {
-		alert('Error uploading image. Please try again later.');
-		}
-	};
-	xhr.send(formData);
-	return fileName
 }
 
 function getemoji(){
@@ -274,9 +233,8 @@ class Diarydata{
 }
 
 
-function saveData(filePath, content,weather,nowdate) {
+function saveData(content,weather,nowdate) {
 	const data = {
-	  filePath: filePath,
 	  content: content,
 	  location: Nlocation,
 	  weather: weather,
