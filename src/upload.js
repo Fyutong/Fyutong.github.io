@@ -244,6 +244,7 @@ submitButton.addEventListener('click', async event=>{
 
 document.getElementById("weathershow").addEventListener('click', async event=>{
 	await showweather()
+	console.log(WeatherText)
 });
 
 document.querySelector("#a_emoji").addEventListener("click", event=>{
