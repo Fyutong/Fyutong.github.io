@@ -198,7 +198,7 @@ function getlocation(){
 
 async function showweather(){
 	const apikey = "33ggoeHslxVF4gCuyAR06hOQ2s4jzC3e"
-	let weatherurl = "http://dataservice.accuweather.com/currentconditions/v1/"
+	let weatherurl = "https://dataservice.accuweather.com/currentconditions/v1/"
 	const targeturl = weatherurl + Ckey +"?apikey=" + apikey
 	try {
 		const response = await axios.get(targeturl);
