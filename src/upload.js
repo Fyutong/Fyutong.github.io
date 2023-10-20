@@ -203,7 +203,6 @@ async function showweather(){
 	try {
 		const response = await axios.get(targeturl);
 		WeatherText = response.data[0].WeatherText;
-		console.log(WeatherText)
 	  } catch (error) {
 		console.error("Error fetching weather data:", error);
 	}
@@ -240,11 +239,6 @@ const submitButton = document.getElementById('a_submit');
 submitButton.addEventListener('click', async event=>{
 	await handleSubmit()
 	window.location.href = "index.html"
-});
-
-document.getElementById("weathershow").addEventListener('click', async event=>{
-	await showweather()
-	console.log(WeatherText)
 });
 
 document.querySelector("#a_emoji").addEventListener("click", event=>{
