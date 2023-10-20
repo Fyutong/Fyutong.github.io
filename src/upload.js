@@ -4,7 +4,7 @@ var WeatherText = "";//record current weather text
 var Nlocation = "United States, Massachusetts, Boston"//record current and default address
 
 function bind(){
-	
+	showweather()
 }
 
 function exist()
@@ -203,6 +203,7 @@ async function showweather(){
 	try {
 		const response = await axios.get(targeturl);
 		WeatherText = response.data[0].WeatherText;
+		console.log(WeatherText)
 	  } catch (error) {
 		console.error("Error fetching weather data:", error);
 	}
@@ -222,16 +223,6 @@ function getdate(){
 	return nowDate;
 }
 
-class Diarydata{
-	constructor(filePath, content,weather,nowdate){
-		this.filePath = filePath;
-		this.content = content;
-		this.location = Nlocation;
-		this.weather = weather;
-		this.nowdate = nowdate;
-	}
-}
-
 
 function saveData(content,weather,nowdate) {
 	const data = {
@@ -249,6 +240,10 @@ const submitButton = document.getElementById('a_submit');
 submitButton.addEventListener('click', async event=>{
 	await handleSubmit()
 	window.location.href = "index.html"
+});
+
+document.getElementById("weathershow").addEventListener('click', async event=>{
+	await showweather()
 });
 
 document.querySelector("#a_emoji").addEventListener("click", event=>{
