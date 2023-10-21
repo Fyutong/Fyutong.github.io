@@ -6,7 +6,7 @@ This is a personal diary site
 点击Edit，每个日记卡会出现一个删除按钮，点击可以删除日记
 点击clean会清除所有日记
 
-Web site home page at: https://fyutong.github.io/public/index.html
+Web site home page at: [diary](https://fyutong.github.io/public/index.html)
 The action area is in the navigation bar on the left
 You can click Add to add the diary
 Click Edit, each diary card will appear a delete button, click to delete the diary
