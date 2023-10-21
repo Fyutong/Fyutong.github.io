@@ -121,6 +121,19 @@ a{
 #show + div::after{
   margin-left: 10px;
 }
+
+.diary-title {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: 60px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  color:rgb(17, 24, 39);
+  text-shadow: 1px 1px 0 #999, 2px 2px 0 #888, 3px 3px 0 #777, 4px 4px 0 #666, 5px 5px 0 #555, 6px 6px 0 #444, 7px 7px 6px rgba(0, 0, 0, 0.4);
+  mix-blend-mode: color-burn;
+}
+
 @media screen and (min-width:1024px){
   .shell span{
     font-size: 30px;
