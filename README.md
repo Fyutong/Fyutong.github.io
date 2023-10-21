@@ -1,5 +1,5 @@
 This is a personal diary site
-网站的主页在：https://fyutong.github.io/public/index.html
+网站的主页在：<https://fyutong.github.io/public/index.html>
 操作区在左侧的导航栏里
 你可以点击Add来添加日记
 点击Edit，每个日记卡会出现一个删除按钮，点击可以删除日记
