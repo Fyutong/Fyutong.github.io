@@ -198,12 +198,11 @@ function getlocation(){
 
 async function showweather(){
 	const apikey = "33ggoeHslxVF4gCuyAR06hOQ2s4jzC3e"
-	let weatherurl = "http://dataservice.accuweather.com/currentconditions/v1/"
+	let weatherurl = "https://dataservice.accuweather.com/currentconditions/v1/"
 	const targeturl = weatherurl + Ckey +"?apikey=" + apikey
 	try {
 		const response = await axios.get(targeturl);
 		WeatherText = response.data[0].WeatherText;
-		console.log(WeatherText)
 	  } catch (error) {
 		console.error("Error fetching weather data:", error);
 	}
@@ -240,10 +239,6 @@ const submitButton = document.getElementById('a_submit');
 submitButton.addEventListener('click', async event=>{
 	await handleSubmit()
 	window.location.href = "index.html"
-});
-
-document.getElementById("weathershow").addEventListener('click', async event=>{
-	await showweather()
 });
 
 document.querySelector("#a_emoji").addEventListener("click", event=>{
